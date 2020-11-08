@@ -45,7 +45,7 @@ struct PushNotification {
         self.time = Date().timeIntervalSince1970
         let aps = push.notificationInfo[AnyHashable("aps")] as? [String:Any]
         self.alert = aps?["alert"] as? String ?? "No Alert"
-        self.pushID = push.notificationInfo[AnyHashable("_")] as? String
+        self.pushID = push.notificationInfo[AnyHashable("_")] as? String ?? ""
     }
     
     init(pushData: PushData) {
